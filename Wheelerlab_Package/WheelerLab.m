@@ -124,8 +124,9 @@ if (strcmp(ext,'.segy') || strcmp(ext,'.sgy') )
    guidata(hObject,handles)
    plotdata(hObject, eventdata, handles)
 
-elseif (strcmp(ext,'.png') || strcmp(ext,'.jpg') || strcmp(ext,'.jpeg') || strcmp(ext,'.tif') ...
-       || strcmp(ext,'.tiff') || strcmp(ext,'.gif') );
+elseif (strcmp(ext,'.png') || strcmp(ext,'.PNG') || strcmp(ext,'.jpg') || strcmp(ext,'.JPG')...
+        || strcmp(ext,'.jpeg')|| strcmp(ext,'.JPEG')  || strcmp(ext,'.tif') || strcmp(ext,'.TIF') ...
+       || strcmp(ext,'.tiff') || strcmp(ext,'.TIFF') || strcmp(ext,'.gif') || strcmp(ext,'.GIF') );
     
     set(handles.checkbox1,'Value',0);
     handles.seisimage= imread(fullfile(FileName,PathName));
@@ -639,13 +640,13 @@ x1=xsys(:,1);y1=xsys(:,2);
 x2=[];y2=[];
 for jj=1:length(x1)-1
     if (x1(jj) ~= x1(jj+1))
-    xq=linspace(x1(jj),x1(jj+1),10*abs(x1(jj+1)-x1(jj))); 
+    xq=linspace(x1(jj),x1(jj+1),1000); 
     yq=interp1([x1(jj) x1(jj+1)],[y1(jj) y1(jj+1)],xq);
     x2=[x2 xq ];y2=[y2 yq ];
     end
 end
-xgrid=linspace(min(x2),max(x2),round(length(x2)/10)); 
-tol=abs(range(x2)/2);
+xgrid=linspace(min(x2)-max(abs(diff(x2))),max(x2)+max(abs(diff(x2))),round(length(x2)/10)); 
+tol=1*abs(range(x2));
 for jj=1:length(xgrid)-1
 xtemp= x2( (x2 >= (xgrid(jj))-tol) & (x2 <= (xgrid(jj+1) )+tol) ) ; 
  if   ~isempty(xtemp)
@@ -675,7 +676,7 @@ end
 set(ax,'Ydir','reverse');
 xlabel(ax,'Relative Distance','Fontsize',15,'fontweight','bold');
 ylabel({'Old   --->   Young';'Relative Geological Time'}','Fontsize',15,'fontweight','bold');
-set(gca,'ytick',[]);
+set(gca,'yticklabel',[]);
 handles.ylimoldb=get(ax,'YLim');
 guidata(hObject,handles)
 
@@ -755,13 +756,13 @@ x1=xsys(:,1);y1=xsys(:,2);
 x2=[];y2=[];
 for jj=1:length(x1)-1
     if (x1(jj) ~= x1(jj+1))
-    xq=linspace(x1(jj),x1(jj+1),10*abs(x1(jj+1)-x1(jj))); 
+    xq=linspace(x1(jj),x1(jj+1),1000); 
     yq=interp1([x1(jj) x1(jj+1)],[y1(jj) y1(jj+1)],xq);
     x2=[x2 xq ];y2=[y2 yq ];
     end
 end
-xgrid=linspace(min(x2),max(x2),round(length(x2)/10)); 
-tol=abs(range(x2)/2);
+xgrid=linspace(min(x2)-max(abs(diff(x2))),max(x2)+max(abs(diff(x2))),round(length(x2)/10)); 
+tol=1*abs(range(x2));
 for jj=1:length(xgrid)-1
 xtemp= x2( (x2 >= (xgrid(jj))-tol) & (x2 <= (xgrid(jj+1) )+tol) ) ; 
  if   ~isempty(xtemp)
@@ -792,7 +793,7 @@ title('Chronostratigraphic Chart','Fontsize',15)
 hold('on')
 xlim(handles.xlimold);    
 ylim(handles.ylimoldb);
-set(gca,'ytick',[])
+set(gca,'yticklabel',[])
 
 
 

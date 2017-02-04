@@ -1,27 +1,29 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="847939895" file="/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/revision1/Wheelerlab_Package/WheelerLab.prj" location="/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/revision1/Wheelerlab_Package" name="WheelerLab" target="target.mlapps" target-name="Package App">
+  <configuration build-checksum="3098165951" file="/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/WheelerLab_revision2_final/Wheelerlab_Package/WheelerLab.prj" location="/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/WheelerLab_revision2_final/Wheelerlab_Package" name="WheelerLab" target="target.mlapps" target-name="Package App">
     <param.appname>WheelerLab</param.appname>
     <param.authnamewatermark>Adewale Amosu</param.authnamewatermark>
     <param.email>adewale@tamu.edu</param.email>
     <param.company>Texas A &amp; M University</param.company>
-    <param.icon />
-    <param.icons />
-    <param.summary>An Interactive Program for Sequence Stratigraphic Analysis of Seismic Sections and the Generation of Chronostratigraphic Sections.</param.summary>
-    <param.description>WheelerLab: An Interactive Program for Sequence Stratigraphic Analysis of Seismic Sections and the Generation of Chronostratigraphic Sections and Dynamic Chronostratigraphic Sections.</param.description>
-    <param.screenshot>/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/paper_figures/rev1/real1/WheelerLab_Seismic.png</param.screenshot>
+    <param.icon>${PROJECT_ROOT}/WheelerLab_resources/icon_24.png</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}/WheelerLab_resources/icon_48.png</file>
+      <file>${PROJECT_ROOT}/WheelerLab_resources/icon_24.png</file>
+      <file>${PROJECT_ROOT}/WheelerLab_resources/icon_16.png</file>
+    </param.icons>
+    <param.summary>WheelerLab: An interactive program for sequence stratigraphic analysis and the generation of dynamic chronostratigraphic sections</param.summary>
+    <param.description>WheelerLab: An interactive program for sequence stratigraphic analysis of seismic sections, outcrops and well sections and the generation of chronostratigraphic sections and dynamic chronostratigraphic sections</param.description>
+    <param.screenshot>/Users/adewaleamosu/Desktop/logo.png</param.screenshot>
     <param.version>1.0</param.version>
     <param.products.name />
     <param.products.id />
     <param.products.version />
     <param.platforms />
-    <param.output>/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/revision1/Wheelerlab_Package</param.output>
-    <param.guid>5ad622e4-fa09-4d35-8117-4b16269eccb0</param.guid>
+    <param.output>/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/WheelerLab_revision2_final/Wheelerlab_Package</param.output>
+    <param.guid>fc57f844-10e9-4bc5-a4cb-e110d2b49043</param.guid>
     <unset>
       <param.authnamewatermark />
       <param.email />
       <param.company />
-      <param.icon />
-      <param.icons />
       <param.version />
       <param.products.name />
       <param.products.id />
@@ -33,18 +35,35 @@
       <file>${PROJECT_ROOT}/WheelerLab.m</file>
     </fileset.main>
     <fileset.depfun>
+      <file>/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/SEISLAB/SeisLab_10.0301/S4M/Geophysics_3.0/@struct/abs.m</file>
+      <file>/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/SEISLAB/SeisLab_10.0301/S4M/Geophysics_3.0/@struct/diff.m</file>
+      <file>/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/SEISLAB/SeisLab_10.0301/S4M/Geophysics_3.0/@struct/double.m</file>
       <file>/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/SEISLAB/SeisLab_10.0301/S4M/Geophysics_3.0/@struct/flipud.m</file>
       <file>/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/SEISLAB/SeisLab_10.0301/S4M/Geophysics_3.0/@struct/sqrt.m</file>
       <file>${PROJECT_ROOT}/WheelerLab.fig</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/GetSegyHeader.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/GetSegyHeaderBasics.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/GetSegyTraceData.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/GetSegyTraceHeader.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/ReadSegy.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/ReadSegyFast.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/ReadSegyHeader.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/ReadSegyTraceHeaderValue.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/SegymatVerbose.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/TraceHeaderDef.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/ibm2num.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/isoctave.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/progress_txt.m</file>
+      <file>${PROJECT_ROOT}/dependencies/SegyMAT/wiggle.m</file>
     </fileset.depfun>
     <fileset.resources />
     <fileset.package />
     <build-deliverables>
-      <file location="/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/revision1" name="Wheelerlab_Package" optional="false">/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/revision1/Wheelerlab_Package</file>
+      <file location="/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/WheelerLab_revision2_final" name="Wheelerlab_Package" optional="false">/Users/adewaleamosu/Desktop/GEO_LIFE_H/RESEARCH/wheelerlab/WheelerLab_revision2_final/Wheelerlab_Package</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>/Applications/MATLAB_R2016a.app</root>
+      <root>/Applications/MATLAB_R2016b.app</root>
       <toolboxes />
     </matlab>
     <platform>
